@@ -1,0 +1,48 @@
+version: 1
+identity:
+  hostname: Kube
+  domain: sivat.xyz
+  username: k8s
+  password: "$6$SALTHERE$HASHEDPASSWORDHERE"  # This will need to be a hashed password
+  realname: k8s User
+
+locale: en_AU.UTF-8
+
+keyboard:
+  layout: us
+
+network:
+  network:
+    version: 2
+    ethernets:
+      enp0s3:
+        dhcp4: true
+
+ntp:
+  enabled: true
+
+apt:
+  primary:
+    - arches: [amd64, i386]
+      uri: http://archive.ubuntu.com/ubuntu/
+
+storage:
+  layout:
+    name: direct
+    match:
+      name: "sda"
+    wipe: superblock
+
+user-data:
+  disable_root: false
+  ssh_pwauth: yes
+  chpasswd:
+    expire: false
+
+packages:
+  - ubuntu-server
+
+late-commands:
+  - 'echo "Rebooting system..."'
+  - [reboot]
+
