@@ -3,8 +3,8 @@ identity:
   hostname: Kube
   domain: sivat.xyz
   username: k8s
-  password: "$6$SALTHERE$HASHEDPASSWORDHERE"  # This will need to be a hashed password
-  realname: k8s User
+  password: $6$oKk.yZIyzUkA$QNAHPrpMsKiH//.44080l76oqMh3fPF.vtpfmvHaiS65WClUdzafSwjhW9eqFPvebMjaGs2IPdRRMmWRkbOZQ0
+  realname: k8s
 
 locale: en_AU.UTF-8
 
@@ -15,7 +15,7 @@ network:
   network:
     version: 2
     ethernets:
-      enp0s3:
+      eth0:
         dhcp4: true
 
 ntp:
